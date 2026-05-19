@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_Data Access Layer\AgerndamentoDAL.cs" />
+    <Compile Include="DAL_Data Access Layer\AgendamentoDAL.cs" />
     <Compile Include="DAL_Data Access Layer\Conexao.cs" />
     <Compile Include="DAL_Data Access Layer\PetDAL.cs" />
     <Compile Include="DAL_Data Access Layer\ServicosDAL.cs" />
