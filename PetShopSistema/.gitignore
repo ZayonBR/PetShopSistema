@@ -1,1 +1,12 @@
+# Pastas de sistema e temporárias
+bin/
+obj/
+.vs/
+
+# Sujeira de Pen Drive e Windows
 System Volume Information/
+IndexerVolumeGuid
+WPSettings.dat
+*.suo
+*.user
+*.log
