@@ -10,8 +10,8 @@ namespace PetShopSystem.DAL
     {
         private Conexao conexao = new Conexao();
 
-        // Método para Cadastrar Usuário
-        public void Cadastrar(Usuario usuario)
+        // 1. ALTERADO DE "void" PARA "bool"
+        public bool Cadastrar(Usuario usuario)
         {
             string sql = @"INSERT INTO Usuario (nome, telefone, email, senha, cep, rua, bairro, cidade, estado, tipo_usuario) 
                            VALUES (@nome, @telefone, @email, @senha, @cep, @rua, @bairro, @cidade, @estado, @tipo)";
@@ -31,7 +31,12 @@ namespace PetShopSystem.DAL
                 cmd.Parameters.AddWithValue("@tipo", usuario.TipoUsuario);
 
                 con.Open();
-                cmd.ExecuteNonQuery();
+
+                // 2. CAPTURA QUANTAS LINHAS FORAM INSERIDAS NO BANCO
+                int linhasAfetadas = cmd.ExecuteNonQuery();
+
+                // 3. SE FOR MAIOR QUE 0, RETORNA TRUE (SUCESSO)
+                return linhasAfetadas > 0;
             }
         }
 

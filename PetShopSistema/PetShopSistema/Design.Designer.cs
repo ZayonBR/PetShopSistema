@@ -1,6 +1,6 @@
 ﻿namespace PetShopSistema
 {
-    partial class Form1
+    partial class Design
     {
         /// <summary>
         /// Required designer variable.
