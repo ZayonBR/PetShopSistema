@@ -1,7 +1,5 @@
 ﻿using PetShopSistema.DAL_Data_Access_Layer;
 using PetShopSystem.Models;
-using System;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace PetShopSystem.DAL
@@ -10,19 +8,21 @@ namespace PetShopSystem.DAL
     {
         private Conexao conexao = new Conexao();
 
-        // 1. ALTERADO DE "void" PARA "bool"
+        // Cadastro completo alinhado com o banco do teu amigo
         public bool Cadastrar(Usuario usuario)
         {
-            string sql = @"INSERT INTO Usuario (nome, telefone, email, senha, cep, rua, bairro, cidade, estado, tipo_usuario) 
-                           VALUES (@nome, @telefone, @email, @senha, @cep, @rua, @bairro, @cidade, @estado, @tipo)";
+            // Nota: Os nomes aqui batem exatamente com as colunas do CREATE TABLE Usuario
+            string sql = @"INSERT INTO Usuario (nm_usuario, ds_email, ds_senha, cd_telefone, cd_CEP, nm_rua, nm_bairro, nm_cidade, sg_estado, cd_tipoUsuario) 
+               VALUES (@nome, @email, @senha, @telefone, @cep, @rua, @bairro, @cidade, @estado, @tipo)";
 
             using (SqlConnection con = conexao.Conectar())
             {
                 SqlCommand cmd = new SqlCommand(sql, con);
+
                 cmd.Parameters.AddWithValue("@nome", usuario.Nome);
-                cmd.Parameters.AddWithValue("@telefone", usuario.Telefone);
                 cmd.Parameters.AddWithValue("@email", usuario.Email);
-                cmd.Parameters.AddWithValue("@senha", usuario.Senha); // Aqui já deve vir o Hash vindo da BLL
+                cmd.Parameters.AddWithValue("@senha", usuario.Senha);
+                cmd.Parameters.AddWithValue("@telefone", usuario.Telefone);
                 cmd.Parameters.AddWithValue("@cep", usuario.Cep);
                 cmd.Parameters.AddWithValue("@rua", usuario.Rua);
                 cmd.Parameters.AddWithValue("@bairro", usuario.Bairro);
@@ -31,19 +31,15 @@ namespace PetShopSystem.DAL
                 cmd.Parameters.AddWithValue("@tipo", usuario.TipoUsuario);
 
                 con.Open();
-
-                // 2. CAPTURA QUANTAS LINHAS FORAM INSERIDAS NO BANCO
-                int linhasAfetadas = cmd.ExecuteNonQuery();
-
-                // 3. SE FOR MAIOR QUE 0, RETORNA TRUE (SUCESSO)
-                return linhasAfetadas > 0;
+                return cmd.ExecuteNonQuery() > 0;
             }
         }
 
-        // Método para Validar Login (Retorna o objeto usuário se encontrar, null se não)
+        // Validação de Login também atualizada para os novos nomes de colunas
         public Usuario ValidarLogin(string email, string senhaHash)
         {
-            string sql = "SELECT * FROM Usuario WHERE email = @email AND senha = @senha";
+            // Ajustado para ds_email e ds_senha
+            string sql = "SELECT * FROM Usuario WHERE ds_email = @email AND ds_senha = @senha";
 
             using (SqlConnection con = conexao.Conectar())
             {
@@ -58,9 +54,9 @@ namespace PetShopSystem.DAL
                 {
                     return new Usuario
                     {
-                        IdUsuario = (int)dr["id_usuario"],
-                        Nome = dr["nome"].ToString(),
-                        TipoUsuario = dr["tipo_usuario"].ToString()
+                        IdUsuario = (int)dr["cd_usuario"],
+                        Nome = dr["nm_usuario"].ToString(),
+                        TipoUsuario = dr["cd_tipoUsuario"].ToString()
                     };
                 }
                 return null;

@@ -1,6 +1,5 @@
 ﻿using PetShopSistema.DAL_Data_Access_Layer;
 using PetShopSystem.Models;
-using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -10,10 +9,9 @@ namespace PetShopSystem.DAL
     {
         private Conexao conexao = new Conexao();
 
-        // Cadastrar um Pet vinculado a um cliente
         public void Cadastrar(Pet pet)
         {
-            string sql = @"INSERT INTO Pet (nome, especie, raca, idade, id_usuario) 
+            string sql = @"INSERT INTO Pet (nm_pet, ds_especie, ds_raca, qt_idade, cd_usuario) 
                            VALUES (@nome, @especie, @raca, @idade, @idUsuario)";
 
             using (SqlConnection con = conexao.Conectar())
@@ -29,12 +27,14 @@ namespace PetShopSystem.DAL
                 cmd.ExecuteNonQuery();
             }
         }
+    
 
-        // Listar todos os Pets de um cliente específico (útil para a visão do Cliente)
-        public List<Pet> ListarPorCliente(int idUsuario)
+
+    public List<Pet> ListarPorCliente(int idUsuario)
         {
             List<Pet> lista = new List<Pet>();
-            string sql = "SELECT * FROM Pet WHERE id_usuario = @idUsuario";
+            // Ajuste para bater com o script: id_usuario no banco é cd_usuario
+            string sql = "SELECT * FROM Pet WHERE cd_usuario = @idUsuario";
 
             using (SqlConnection con = conexao.Conectar())
             {
@@ -48,12 +48,13 @@ namespace PetShopSystem.DAL
                 {
                     lista.Add(new Pet
                     {
-                        IdPet = (int)dr["id_pet"],
-                        Nome = dr["nome"].ToString(),
-                        Especie = dr["especie"].ToString(),
-                        Raca = dr["raca"].ToString(),
-                        Idade = (int)dr["idade"],
-                        IdUsuario = (int)dr["id_usuario"]
+                        // Ajuste para bater com os prefixos (cd_, nm_, ds_) do script SQL
+                        IdPet = (int)dr["cd_pet"],
+                        Nome = dr["nm_pet"].ToString(),
+                        Especie = dr["ds_especie"].ToString(),
+                        Raca = dr["ds_raca"].ToString(),
+                        Idade = (int)dr["qt_idade"],
+                        IdUsuario = (int)dr["cd_usuario"]
                     });
                 }
             }
