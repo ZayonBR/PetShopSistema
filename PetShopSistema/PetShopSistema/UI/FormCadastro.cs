@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Data;
-using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using System.Security.Cryptography;
-using System.Text;
 using PetShopSystem.Models;
-using PetShopSystem.DAL;
+using PetShopSistema.BLL_Business_Logic_Layer; 
+using PetShopSistema.Utils; 
 
 namespace PetShopSistema.UI
 {
@@ -18,89 +15,31 @@ namespace PetShopSistema.UI
             InitializeComponent();
             telaLoginOrigem = login;
         }
+
         public FormCadastro()
         {
             InitializeComponent();
         }
 
-        private string CriptografarSenha(string senhaPura)
-        {
-            using (SHA256 sha256 = SHA256.Create())
-            {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senhaPura));
-                StringBuilder construtor = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    construtor.Append(bytes[i].ToString("x2"));
-                }
-                return construtor.ToString();
-            }
-        }
-
-        private void txtCep_Leave(object sender, EventArgs e)
-        {
-            string cepDigitado = txtCep.Text.Trim();
-
-            if (cepDigitado == "") return;
-
-            if (!Regex.IsMatch(cepDigitado, @"^[0-9]{5}-?[0-9]{3}$"))
-            {
-                MessageBox.Show("Formato de CEP inválido!");
-                return;
-            }
-
-            string cepLimpo = cepDigitado.Replace("-", "");
-
-            try
-            {
-                DataSet dados = new DataSet();
-                dados.ReadXml("https://viacep.com.br/ws/" + cepLimpo + "/xml/");
-
-                if (dados.Tables[0].Columns.Contains("erro"))
-                {
-                    MessageBox.Show("CEP não encontrado.");
-                    return;
-                }
-
-                txtRua.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
-                txtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
-                txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
-                txtEstado.Text = dados.Tables[0].Rows[0]["uf"].ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Erro ao tentar buscar o endereço na internet.");
-            }
-        }
-
-        private void btnVoltar_Click(object sender, EventArgs e)
+        private void btnVoltar_Click_1(object sender, EventArgs e)
         {
             telaLoginOrigem.Show();
             this.Hide();
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (txtEmail.Text == "" || txtSenha.Text == "" || txtNome.Text == "")
-            {
-                MessageBox.Show("Por favor, preencha os campos obrigatórios (Nome, E-mail e Senha)!");
-                return;
-            }
+            DialogResult Sair;
+            Sair = MessageBox.Show("Deseja mesmo sair do sistema?", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (!Regex.IsMatch(txtEmail.Text, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+            if (Sair.Equals(DialogResult.Yes))
             {
-                MessageBox.Show("O formato do E-mail é inválido.");
-                txtEmail.Focus();
-                return;
+                Application.Exit();
             }
+        }
 
-            if (!Regex.IsMatch(txtTelefone.Text, @"^\(?[1-9]{2}\)? ?(?:[2-8]|9[1-9])[0-9]{3}\-?[0-9]{4}$"))
-            {
-                MessageBox.Show("O formato do Telefone é inválido. Use DDD e número.");
-                txtTelefone.Focus();
-                return;
-            }
-
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
             try
             {
                 Usuario novoUsuario = new Usuario();
@@ -114,26 +53,53 @@ namespace PetShopSistema.UI
                 novoUsuario.Estado = txtEstado.Text;
                 novoUsuario.TipoUsuario = "Cliente";
 
-                novoUsuario.Senha = CriptografarSenha(txtSenha.Text);
+                novoUsuario.Senha = txtSenha.Text;
 
-                UsuarioDAL dal = new UsuarioDAL();
+                UsuarioBLL bll = new UsuarioBLL();
 
-                if (dal.Cadastrar(novoUsuario) == true)
+                if (bll.CadastrarUsuario(novoUsuario) == true)
                 {
                     MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     telaLoginOrigem.Show();
                     this.Hide();
                 }
-                else
-                {
-                    MessageBox.Show("Erro ao tentar salvar os dados no banco.");
-                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro de conexão com o banco: " + ex.Message);
+                MessageBox.Show(ex.Message, "Aviso de Validação", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+        private async void txtCep_Leave_1(object sender, EventArgs e)
+        {
+            string cepDigitado = txtCep.Text;
+
+            if (string.IsNullOrWhiteSpace(cepDigitado)) return;
+
+            try
+            {
+                var endereco = await APIServicos.BuscarEnderecoPorCEP(cepDigitado);
+
+                if (endereco != null)
+                {
+                    txtRua.Text = endereco.Logradouro;
+                    txtBairro.Text = endereco.Bairro;
+                    txtCidade.Text = endereco.Localidade;
+                    txtEstado.Text = endereco.Uf;
+                }
+                else
+                {
+                    MessageBox.Show("CEP não encontrado ou inválido.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtCep.Focus();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro ao tentar buscar o endereço na internet.");
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
+        private void txtTelefone_TextChanged(object sender, EventArgs e) { }
     }
 }

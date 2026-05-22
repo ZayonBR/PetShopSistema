@@ -31,258 +31,317 @@ namespace PetShopSistema.UI
         /// </summary>
         private void InitializeComponent()
         {
-            label_usuario = new Label();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            txtNome = new TextBox();
-            txtEmail = new TextBox();
-            txtTelefone = new TextBox();
-            txtSenha = new TextBox();
-            label6 = new Label();
-            txtCep = new TextBox();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            txtEstado = new TextBox();
-            label10 = new Label();
-            txtCidade = new TextBox();
-            txtBairro = new TextBox();
-            txtRua = new TextBox();
-            btnCadastrar = new Button();
-            btnVoltar = new Button();
-            SuspendLayout();
+            this.label_usuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCep = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtRua = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // label_usuario
             // 
-            label_usuario.AutoSize = true;
-            label_usuario.Font = new Font("Segoe UI Black", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label_usuario.ForeColor = Color.SteelBlue;
-            label_usuario.Location = new Point(12, 18);
-            label_usuario.Name = "label_usuario";
-            label_usuario.Size = new Size(281, 81);
-            label_usuario.TabIndex = 11;
-            label_usuario.Text = "PetShop";
+            this.label_usuario.AutoSize = true;
+            this.label_usuario.Font = new System.Drawing.Font("Segoe UI Black", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_usuario.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label_usuario.Location = new System.Drawing.Point(9, 12);
+            this.label_usuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_usuario.Name = "label_usuario";
+            this.label_usuario.Size = new System.Drawing.Size(224, 65);
+            this.label_usuario.TabIndex = 11;
+            this.label_usuario.Text = "PetShop";
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(453, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(262, 41);
-            label1.TabIndex = 12;
-            label1.Text = "Faça seu cadastro";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(64, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 32);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Faça seu cadastro";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(389, 79);
-            label2.Name = "label2";
-            label2.Size = new Size(52, 20);
-            label2.TabIndex = 13;
-            label2.Text = "Nome";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(31, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 15);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Nome";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(389, 115);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 20);
-            label3.TabIndex = 14;
-            label3.Text = "E-mail";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 64);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "E-mail";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(373, 148);
-            label4.Name = "label4";
-            label4.Size = new Size(69, 20);
-            label4.TabIndex = 15;
-            label4.Text = "Telefone";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 85);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 15);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Telefone";
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(389, 181);
-            label5.Name = "label5";
-            label5.Size = new Size(51, 20);
-            label5.TabIndex = 16;
-            label5.Text = "Senha";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(31, 107);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 15);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Senha";
             // 
             // txtNome
             // 
-            txtNome.Location = new Point(453, 79);
-            txtNome.Name = "txtNome";
-            txtNome.Size = new Size(249, 27);
-            txtNome.TabIndex = 17;
+            this.txtNome.Location = new System.Drawing.Point(79, 40);
+            this.txtNome.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(188, 20);
+            this.txtNome.TabIndex = 17;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(453, 112);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(249, 27);
-            txtEmail.TabIndex = 18;
+            this.txtEmail.Location = new System.Drawing.Point(79, 62);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(188, 20);
+            this.txtEmail.TabIndex = 18;
             // 
             // txtTelefone
             // 
-            txtTelefone.Location = new Point(453, 145);
-            txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(249, 27);
-            txtTelefone.TabIndex = 19;
+            this.txtTelefone.Location = new System.Drawing.Point(79, 83);
+            this.txtTelefone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(188, 20);
+            this.txtTelefone.TabIndex = 19;
+            this.txtTelefone.TextChanged += new System.EventHandler(this.txtTelefone_TextChanged);
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(453, 178);
-            txtSenha.Name = "txtSenha";
-            txtSenha.Size = new Size(249, 27);
-            txtSenha.TabIndex = 20;
+            this.txtSenha.Location = new System.Drawing.Point(79, 105);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.Size = new System.Drawing.Size(188, 20);
+            this.txtSenha.TabIndex = 20;
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(388, 242);
-            label6.Name = "label6";
-            label6.Size = new Size(35, 20);
-            label6.TabIndex = 21;
-            label6.Text = "CEP";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(30, 146);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 15);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "CEP";
             // 
             // txtCep
             // 
-            txtCep.Location = new Point(429, 239);
-            txtCep.Name = "txtCep";
-            txtCep.Size = new Size(152, 27);
-            txtCep.TabIndex = 22;
-            txtCep.Leave += txtCep_Leave;
+            this.txtCep.Location = new System.Drawing.Point(61, 144);
+            this.txtCep.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCep.Name = "txtCep";
+            this.txtCep.Size = new System.Drawing.Size(115, 20);
+            this.txtCep.TabIndex = 22;
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave_1);
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(367, 311);
-            label7.Name = "label7";
-            label7.Size = new Size(56, 20);
-            label7.TabIndex = 23;
-            label7.Text = "Cidade";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 191);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 15);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Cidade";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(373, 344);
-            label8.Name = "label8";
-            label8.Size = new Size(52, 20);
-            label8.TabIndex = 24;
-            label8.Text = "Bairro";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(19, 213);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(41, 15);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "Bairro";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(387, 377);
-            label9.Name = "label9";
-            label9.Size = new Size(36, 20);
-            label9.TabIndex = 25;
-            label9.Text = "Rua";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(29, 234);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(28, 15);
+            this.label9.TabIndex = 25;
+            this.label9.Text = "Rua";
             // 
             // txtEstado
             // 
-            txtEstado.Location = new Point(429, 276);
-            txtEstado.Name = "txtEstado";
-            txtEstado.Size = new Size(152, 27);
-            txtEstado.TabIndex = 26;
+            this.txtEstado.Location = new System.Drawing.Point(61, 168);
+            this.txtEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(115, 20);
+            this.txtEstado.TabIndex = 26;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(367, 279);
-            label10.Name = "label10";
-            label10.Size = new Size(56, 20);
-            label10.TabIndex = 27;
-            label10.Text = "Estado";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(14, 170);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(43, 15);
+            this.label10.TabIndex = 27;
+            this.label10.Text = "Estado";
             // 
             // txtCidade
             // 
-            txtCidade.Location = new Point(429, 308);
-            txtCidade.Name = "txtCidade";
-            txtCidade.Size = new Size(152, 27);
-            txtCidade.TabIndex = 28;
+            this.txtCidade.Location = new System.Drawing.Point(61, 189);
+            this.txtCidade.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(115, 20);
+            this.txtCidade.TabIndex = 28;
             // 
             // txtBairro
             // 
-            txtBairro.Location = new Point(429, 341);
-            txtBairro.Name = "txtBairro";
-            txtBairro.Size = new Size(152, 27);
-            txtBairro.TabIndex = 29;
+            this.txtBairro.Location = new System.Drawing.Point(61, 211);
+            this.txtBairro.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(115, 20);
+            this.txtBairro.TabIndex = 29;
             // 
             // txtRua
             // 
-            txtRua.Location = new Point(429, 377);
-            txtRua.Name = "txtRua";
-            txtRua.Size = new Size(152, 27);
-            txtRua.TabIndex = 30;
+            this.txtRua.Location = new System.Drawing.Point(61, 234);
+            this.txtRua.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRua.Name = "txtRua";
+            this.txtRua.Size = new System.Drawing.Size(115, 20);
+            this.txtRua.TabIndex = 30;
             // 
             // btnCadastrar
             // 
-            btnCadastrar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastrar.Location = new Point(429, 410);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(140, 38);
-            btnCadastrar.TabIndex = 31;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(61, 258);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(105, 36);
+            this.btnCadastrar.TabIndex = 31;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click_1);
             // 
             // btnVoltar
             // 
-            btnVoltar.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnVoltar.Location = new Point(575, 410);
-            btnVoltar.Name = "btnVoltar";
-            btnVoltar.Size = new Size(140, 38);
-            btnVoltar.TabIndex = 32;
-            btnVoltar.Text = "Voltar";
-            btnVoltar.UseVisualStyleBackColor = true;
-            btnVoltar.Click += btnVoltar_Click;
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.Location = new System.Drawing.Point(170, 258);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(108, 36);
+            this.btnVoltar.TabIndex = 32;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnVoltar);
+            this.panel1.Controls.Add(this.btnCadastrar);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtRua);
+            this.panel1.Controls.Add(this.txtBairro);
+            this.panel1.Controls.Add(this.txtCidade);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.txtEstado);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtCep);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.txtSenha);
+            this.panel1.Controls.Add(this.txtTelefone);
+            this.panel1.Controls.Add(this.txtEmail);
+            this.panel1.Controls.Add(this.txtNome);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Location = new System.Drawing.Point(261, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(323, 302);
+            this.panel1.TabIndex = 33;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(589, -1);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 27);
+            this.button1.TabIndex = 33;
+            this.button1.Text = "Fechar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormCadastro
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnVoltar);
-            Controls.Add(btnCadastrar);
-            Controls.Add(txtRua);
-            Controls.Add(txtBairro);
-            Controls.Add(txtCidade);
-            Controls.Add(label10);
-            Controls.Add(txtEstado);
-            Controls.Add(label9);
-            Controls.Add(label8);
-            Controls.Add(label7);
-            Controls.Add(txtCep);
-            Controls.Add(label6);
-            Controls.Add(txtSenha);
-            Controls.Add(txtTelefone);
-            Controls.Add(txtEmail);
-            Controls.Add(txtNome);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(label_usuario);
-            Name = "FormCadastro";
-            Text = "FormCadastro";
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(650, 355);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label_usuario);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "FormCadastro";
+            this.Text = "FormCadastro";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -309,5 +368,7 @@ namespace PetShopSistema.UI
         private TextBox txtRua;
         private Button btnCadastrar;
         private Button btnVoltar;
+        private Panel panel1;
+        private Button button1;
     }
 }

@@ -9,4 +9,5 @@
         // Nunca use 'float' ou 'double', pois eles causam erros de arredondamento em centavos.
         public decimal Valor { get; set; }       // No SQL: DECIMAL(10,2)
     }
+
 }
